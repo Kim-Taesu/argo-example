@@ -1,5 +1,8 @@
 replicaCount: 1
 
+app:
+    name: ""
+
 image:
   repository: quay.io/rhdevelopers/bgd
   pullPolicy: IfNotPresent
