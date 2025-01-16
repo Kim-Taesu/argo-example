@@ -1,0 +1,3 @@
+kustomize:
+  images:
+  - wstattaesukim/bgd:1.1.0
