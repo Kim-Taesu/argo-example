@@ -1,6 +1,8 @@
 replicaCount: 1
 
-app: "bgdh"
+app:
+    name: bgdh
+    customName: ""
 
 image:
   repository: quay.io/rhdevelopers/bgd
