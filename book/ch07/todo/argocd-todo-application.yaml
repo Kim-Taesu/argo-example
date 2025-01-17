@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: todo-app
+  namespace: argocd
+spec:
+    destination:
+        namespace: todo
+        server: https://kubernetes.default.svc
+    project: default
+    source:
+        path: book/ch07/todo
+        repoURL: https://github.com/Kim-Taesu/argo-example.git
+        targetRevision: main
+    syncPolicy: # 동기화 정책을 정의
+        automated: # Argo CD 가 자동으로 저장소 내용과 동기화하도록 지정
+            prune: true # 저장소 내용과 동기화된 리소스가 다르면 삭제
+            selfHeal: false # 저장소 내용과 동기화된 리소스가 다르면 복구
+        syncOptions:
+            - CreateNamespace=true

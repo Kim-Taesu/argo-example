@@ -3,8 +3,8 @@ kind: Job
 metadata:
   name: todo-insert
   annotations:
-    argocd.argoproj.io/hook: PostSync # <1>
-    argocd.argoproj.io/hook-delete-policy: HookSucceeded
+    argocd.argoproj.io/hook: PostSync # <1> 매니페스트가 적용될 때 설정됨
+    argocd.argoproj.io/hook-delete-policy: HookSucceeded # 훅 실행이 성공한 후 삭제됨
 spec:
   ttlSecondsAfterFinished: 100
   template:
