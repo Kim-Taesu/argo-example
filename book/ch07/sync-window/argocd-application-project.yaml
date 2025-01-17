@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: default
+  namespace: argocd
+spec:
+    description: "Default project for Argo CD"
+    syncWindows:
+    - kind: allow
+      schedule: "0 22 * * *" # 22:00에 한함
+      duration: 1h # 1시간 동안
+      applications:
+        - "*-prod" # 이름이 -prod 로 끝나는 모든 애플리케이션
+    - kind: deny
+      schedule: "0 22 * * *" # 매일 22:00에 한함
+      duration: 1h # 1시간 동안
+      manualSync: true # 수동 동기화만 허용
+      namespaces:
+       - bgd
+    - kind: allow
+      schedule: "0 23 * * *" # 매일 23:00에 한함
+      duration: 1h # 1시간 동안
+      clusters:
+        - "prod-cluster"
