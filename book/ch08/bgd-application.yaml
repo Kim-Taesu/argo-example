@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: staging-app
+spec:
+    project: default
+    source:
+        path: book/ch08/bgd-gen/staging
+        repoURL: https://github.com/Kim-Taesu/gitops-cookbook-sc.git
+        targetRevision: HEAD
+    destination:
+        namespace: default
+        server: https://kubernetes.default.svc
+
+---
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prod-app
+spec:
+    project: default
+    source:
+        path: book/ch08/bgd-gen/prod
+        repoURL: https://github.com/Kim-Taesu/gitops-cookbook-sc.git
+        targetRevision: HEAD
+    destination:
+        namespace: default
+        server: https://kubernetes.default.svc
