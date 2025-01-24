@@ -6,7 +6,7 @@ spec:
     project: default
     source:
         path: book/ch08/bgd-gen/staging
-        repoURL: https://github.com/Kim-Taesu/gitops-cookbook-sc.git
+        repoURL: https://github.com/Kim-Taesu/argo-example.git
         targetRevision: HEAD
     destination:
         namespace: default
@@ -22,7 +22,7 @@ spec:
     project: default
     source:
         path: book/ch08/bgd-gen/prod
-        repoURL: https://github.com/Kim-Taesu/gitops-cookbook-sc.git
+        repoURL: https://github.com/Kim-Taesu/argo-example.git
         targetRevision: HEAD
     destination:
         namespace: default

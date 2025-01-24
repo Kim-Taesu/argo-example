@@ -10,7 +10,7 @@ spec:
         - cluster: staging
           url: https://kubernetes.default.svc
           location: default
-        - cluster: pro
+        - cluster: prod
           url: https://kubernetes.default.svc
           location: app
     template:
@@ -19,7 +19,7 @@ spec:
         spec:
             project: default
             source:
-                repoURL: https://github.com/Kim-Taesu/gitops-cookbook-sc.git
+                repoURL: https://github.com/Kim-Taesu/argo-example.git
                 targetRevision: main
                 path: book/ch08/{{cluster}}
             destination:
